@@ -4,7 +4,23 @@
 		{
 			"label": "Build JiYuTrainer",
 			"type": "shell",
-			"command": "msbuild"
+			"command": "msbuild",
+			"args": [
+				"JiYuTrainer.sln",
+				"/p:Configuration=Release",
+				"/p:Platform=x64"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"presentation": {
+				"echo": true,
+				"reveal": "silent",
+				"focus": false,
+				"panel": "shared"
+			},
+			"problemMatcher": "$msCompile"
 		}
 	]
 }
