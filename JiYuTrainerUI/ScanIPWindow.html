@@ -1,0 +1,105 @@
+﻿<html>
+<head>
+    <style>
+        html {
+            overflow: hidden;
+            overflow-y: scroll;
+            vertical-scrollbar: my-v-scrollbar;
+        }
+        body {
+            font-family: "Microsoft YaHei", Tahoma, sans-serif;
+            margin: 15px;
+            padding: 0;
+        }
+
+        .ip-list {
+            display: block;
+            font-size: 12px;
+            background-color: #efefef;
+            padding: 10px;
+            margin: 5px;
+            user-select: text;
+        }
+        .ip-list a {
+            display: inline-block;
+            text-decoration: underline;
+            margin-right: 10px;
+        }
+        /* style block defining vertical scrollbar */
+        @set my-v-scrollbar {
+            .prev {
+                display: none;
+            }
+            .next {
+                display: none;
+            }
+            .base,
+            .next-page,
+            .prev-page {
+                background-color: #f3f3f3;
+                border: none;
+            }
+            .slider {
+                background: #ccc;
+                border-radius: 6px;
+                border: 2px solid #f3f3f3;
+            }
+            .slider:hover {
+                background: #999;
+            }
+            .slider:active {
+                background: #888;
+            }
+            .base:disabled {
+                background: transparent;
+            }
+            .base {
+                width: 10px;
+            }
+            /* explicit declaration of its width */
+            .corner {
+                background: transparent;
+            }
+        }
+
+        .top-form input,.top-form select {
+            margin-left: 20px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <div class="top-form">
+        <span>Local IP: </span>
+        <select id="select_address"></select>
+
+        <br/>
+
+        <span>Start address: </span>
+        <input id="input_start_add" width="300px" />
+
+        <br/>
+
+        <span>End address: </span>
+        <input id="input_end_add" width="300px" />
+
+        <br/>
+
+        <button id="btn_refresh_ip_list" style="margin: 10px 0;">Start scanning</button>
+        <span style="margin: 10px 0;">Click IP to copy to clipboard</span>
+    </div>
+
+    <div class="ip-list" id="ip_list">
+        Click the button above to scan local network
+    </div>
+   
+    <script type="text/tiscript">
+        function self.ready()
+        {
+            view.docunmentComplete();
+        }
+    </script>
+</body>
+</html>
