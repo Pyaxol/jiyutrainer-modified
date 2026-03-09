@@ -9,27 +9,16 @@ on:
 jobs:
   build:
     runs-on: windows-latest
-<<<<<<< HEAD
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v3
 
     - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v2
 
     - name: Build
       run: msbuild JiYuTrainer.sln /p:Configuration=Release /p:Platform=x64
-=======
-    
-    steps:
-    - uses: actions/checkout@v3
-    
-    - name: Setup MSBuild
-      uses: microsoft/setup-msbuild@v1
-    
-    - name: Build Solution
-      run: msbuild /p:Configuration=Release
-    
+
     - name: Upload Build Artifacts
       uses: actions/upload-artifact@v3
       with:
@@ -37,4 +26,4 @@ jobs:
         path: |
           **/bin/Release/
           !**/obj/
->>>>>>> 9e22939909b2aa1d3f0c7fa171643bdecf7cfae2
+
